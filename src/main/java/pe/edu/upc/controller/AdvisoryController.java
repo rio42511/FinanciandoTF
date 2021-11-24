@@ -139,6 +139,7 @@ public class AdvisoryController {
 
 	}
 	
+	/*
 	@GetMapping("/reportes")
 	public String listReports(Model model) {
 
@@ -180,5 +181,5 @@ public class AdvisoryController {
 		return "reports/usuarioxServicio";
 	
 	}
-
+*/
 }

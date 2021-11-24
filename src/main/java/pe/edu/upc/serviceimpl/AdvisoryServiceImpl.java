@@ -53,7 +53,7 @@ public class AdvisoryServiceImpl implements IAdvisoryService{
 		// TODO Auto-generated method stub
 		return aR.findByCodeLikeIgnoreCase(code);
 	}
-
+/*
 	@Override
 	public List<String[]> asesorTop()
 	{
@@ -88,4 +88,5 @@ public class AdvisoryServiceImpl implements IAdvisoryService{
 		return aR.usuariosXservicio(servicio);
 		
 	}
+*/
 }

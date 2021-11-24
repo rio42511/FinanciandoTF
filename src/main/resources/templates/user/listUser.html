@@ -33,13 +33,16 @@
 					<tr>
 						<th scope="col" class="text-center">Id</th>
 						<th scope="col" class="text-center">Usuario</th>
+						<th scope="col" class="text-center">Nombre</th>
+						
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="u: ${listaUsuarios}">
 						<td class="text-center" th:text="${u.id}"></td>
 						<td class="text-center" th:text="${u.username}"></td>
-				</tr>
+						<td class="text-center" th:text="${u.name}"></td>
+					</tr>
 				</tbody>
 			</table>
 			<div th:if="${mensaje}" class="alert alert-danger">

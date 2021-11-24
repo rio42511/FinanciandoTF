@@ -30,8 +30,8 @@
 				<h3>Actualizar Asesoria</h3>
 			</div>
 			<div class="col-8 frm-registro">
-				<form th:action="@{/advisories/save}" method="post"
-					th:object="${advisory}">
+				<form th:action="@{/advisories/save}" method="post" class="row"
+					th:object="${advisory}" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>ID:</label> <input type="text" th:field="*{idAdvisory}"
 							class="form-control" readonly

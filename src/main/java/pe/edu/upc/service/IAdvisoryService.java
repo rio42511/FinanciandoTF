@@ -17,4 +17,15 @@ public interface IAdvisoryService {
 	List<Advisory> findByCode(String code);
 
 	List<Advisory> findByCodeLikeIgnoreCase(String code);
+	
+	public List<String[]> asesorTop();
+
+	public List<String[]> servicioTop();
+
+	public List<String[]> usuarioTop();
+
+	public List<String[]> usuariosTopxServicio();
+	
+	public List<String[]> usuariosXservicio(String servicio);
+
 }

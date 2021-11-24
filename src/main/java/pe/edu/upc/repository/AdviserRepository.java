@@ -20,4 +20,5 @@ public interface AdviserRepository extends JpaRepository<Adviser, Integer> {
 	@Query("select a from Adviser a where a.nameAdviser like %:name%")
 	List<Adviser> findByNameLikeIgnoreCase(String name);
 
+	//Asesor TOP con mas asesorias
 }

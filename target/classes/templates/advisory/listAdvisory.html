@@ -30,34 +30,38 @@
 				<a th:href="@{/advisories/new}" class="btnnew btn btn-danger">Nuevo</a>
 			</div>
 
-		<table class="table">
-			<thead class="thead-light">
-				<tr>
-					<th scope="col" class="text-center">id</th>
-					<th scope="col" class="text-center">Codigo</th>
-					<th scope="col" class="text-center">Usuario</th>
-					<th scope="col" class="text-center">Asesor</th>
-					<th scope="col" class="text-center">Servicio</th>
-					<th scope="col" class="text-center">Fecha de la asesoria</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="as : ${listaAsesorias}">
-					<td class="text-center" th:text="${as.idAdvisory}"></td>
-					<td class="text-center" th:text="${as.codeAdvisory}"></td>
-					<td class="text-center" th:text="${as.users.name}"></td>
-					<td class="text-center" th:text="${as.adviser.nameAdviser}"></td>
-					<td class="text-center"
-						th:text="${as.servicio.category.nameCategory}"></td>
-					<td class="text-center" th:text="${as.dateAdvisory}"></td>
-
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div th:if="${mensaje}" class="alert alert-danger">
-		<p th:text="${mensaje}"></p>
-	</div>
+			<table class="table">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col" class="text-center">id</th>
+						<th scope="col" class="text-center">Codigo</th>
+						<th scope="col" class="text-center">Usuario</th>
+						<th scope="col" class="text-center">Asesor</th>
+						<th scope="col" class="text-center">Servicio</th>
+						<th scope="col" class="text-center">Fecha de la asesoria</th>
+						<th scope="col" class="text-center">Operación</th>
+						<th scope="col" class="text-center">Operación</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="as : ${listaAsesorias}">
+						<td class="text-center" th:text="${as.idAdvisory}"></td>
+						<td class="text-center" th:text="${as.codeAdvisory}"></td>
+						<td class="text-center" th:text="${as.users.name}"></td>
+						<td class="text-center" th:text="${as.adviser.nameAdviser}"></td>
+						<td class="text-center" th:text="${as.servicio.nameServicio}"></td>
+						<td class="text-center" th:text="${as.dateAdvisory}"></td>
+						<td align="center"><a
+							th:href="@{/advisories/delete?id=}+${as.idAdvisory}" class="btn btn-dark">Eliminar</a></td>
+						<td align="center"><a
+							th:href="@{'/advisories/detalle/' + ${as.idAdvisory}}" class="btn btn-dark">Actualizar</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div th:if="${mensaje}" class="alert alert-danger">
+			<p th:text="${mensaje}"></p>
+		</div>
 
 	</div>
 

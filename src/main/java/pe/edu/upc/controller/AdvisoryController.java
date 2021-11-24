@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 
 import pe.edu.upc.entities.Advisory;
+import pe.edu.upc.entities.Servicio;
 import pe.edu.upc.service.IAdviserService;
 import pe.edu.upc.service.IAdvisoryService;
 import pe.edu.upc.service.IServicioService;
@@ -137,4 +138,47 @@ public class AdvisoryController {
 		return "advisory/find";
 
 	}
+	
+	@GetMapping("/reportes")
+	public String listReports(Model model) {
+
+		return "/reports/reports";
+	}
+	
+	@RequestMapping("/reporte1")
+	public String usuarioTop(Map<String,Object> model)
+	{
+		model.put("listaUsuarios", aService.usuarioTop());
+		return "reports/usuarioTop";
+	}
+	
+	@RequestMapping("/reporte2")
+	public String servicioTop(Map<String,Object> model)
+	{
+		model.put("listaServicios", aService.servicioTop());
+		return "reports/servicioTop";
+	}
+	
+	@RequestMapping("/reporte3")
+	public String asesorTop(Map<String,Object> model)
+	{
+		model.put("listaAsesores", aService.asesorTop());
+		return "reports/asesorTop";
+	}
+	
+	@RequestMapping("/reporte4")
+	public String usuarioTopxServicio(Map<String,Object> model)
+	{
+		model.put("listaUsuariosTopxServicio", aService.usuariosTopxServicio());
+		return "reports/usuarioTopxServicio";
+	}
+	
+	@RequestMapping("/reporte5")
+	public String usuarioxServicio(Map<String,Object> model, @ModelAttribute Servicio servicio) throws ParseException
+	{
+		model.put("listaUsuariosxServicio", aService.usuariosXservicio(servicio.getNameServicio()));
+		return "reports/usuarioxServicio";
+	
+	}
+
 }

@@ -54,5 +54,38 @@ public class AdvisoryServiceImpl implements IAdvisoryService{
 		return aR.findByCodeLikeIgnoreCase(code);
 	}
 
-
+	@Override
+	public List<String[]> asesorTop()
+	{
+		
+		return aR.asesorTop();
+	}
+	
+	@Override
+	public List<String[]> servicioTop()
+	{
+		
+		return aR.servicioTop();
+	}
+	
+	@Override
+	public List<String[]> usuarioTop()
+	{
+		
+		return aR.usuarioTop();
+		
+	}
+	@Override
+	public List<String[]> usuariosTopxServicio()
+	{
+		return aR.usuariosTopxServicio();
+		
+	}
+	
+	@Override
+	public List<String[]> usuariosXservicio(String servicio)
+	{
+		return aR.usuariosXservicio(servicio);
+		
+	}
 }

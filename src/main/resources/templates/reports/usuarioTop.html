@@ -21,7 +21,7 @@
 
 		<div class="content container">
 			<div class="cinforeport">
-				<h3 class="title-content">Usuario Top</h3>
+				<h3 class="title-content">Asesor Top</h3>
 				<p class="inforeport">Lista de el total de veces que un producto
 					fue importado</p>
 			</div>
@@ -29,11 +29,11 @@
 				<thead class="thead-light">
 					<tr>
 						<th scope="col" class="text-center">Veces</th>
-						<th scope="col" class="text-center">Usuario</th>
+						<th scope="col" class="text-center">Asesor</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="rep : ${listaUsuarios}">
+					<tr th:each="rep : ${listaAsesores}">
 						<td class="text-center" th:text="${rep[0]}"></td>
 						<td class="text-center" th:text="${rep[1]}"></td>
 					</tr>

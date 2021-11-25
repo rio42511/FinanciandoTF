@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,6 +29,7 @@ import pe.edu.upc.service.IUserService;
 
 @Controller
 @RequestMapping("/advisories")
+@Secured("ROLE_ADMIN")
 public class AdvisoryController {
 
 	@Autowired
@@ -139,34 +141,34 @@ public class AdvisoryController {
 
 	}
 	
-	/*
+	
 	@GetMapping("/reportes")
 	public String listReports(Model model) {
 
 		return "/reports/reports";
 	}
 	
-	@RequestMapping("/reporte1")
+	/*@RequestMapping("/reporte1")
 	public String usuarioTop(Map<String,Object> model)
 	{
 		model.put("listaUsuarios", aService.usuarioTop());
 		return "reports/usuarioTop";
 	}
-	
+
 	@RequestMapping("/reporte2")
 	public String servicioTop(Map<String,Object> model)
 	{
 		model.put("listaServicios", aService.servicioTop());
 		return "reports/servicioTop";
 	}
-	
+	*/
 	@RequestMapping("/reporte3")
 	public String asesorTop(Map<String,Object> model)
 	{
 		model.put("listaAsesores", aService.asesorTop());
-		return "reports/asesorTop";
+		return "reports/usuarioTop";
 	}
-	
+	/*
 	@RequestMapping("/reporte4")
 	public String usuarioTopxServicio(Map<String,Object> model)
 	{
